@@ -1,7 +1,7 @@
 import './FichaInternamentoForm.css';
 import "draft-js/dist/Draft.css";
 import RichTextEditor from "./formElements/richText/RichTextEditor";
-import {Row, Col, Form, Button} from "react-bootstrap";
+import {Row, Col, Form, Button, ButtonGroup} from "react-bootstrap";
 import Fieldset from "./formElements/Fieldset";
 import FormInput from "./formElements/FormInput";
 import FormSelect from "./formElements/FormSelect";
@@ -208,9 +208,10 @@ function FichaInternamentoForm(props) {
           </Col>
         </Row>
       </Fieldset>
-
-
-      <Button variant="primary" type="submit">Guardar</Button>
+      <ButtonGroup>
+        <Button variant="primary" type="submit">Guardar</Button>
+        <Button variant="primary" onClick={() => window.print()}>Imprimir</Button>
+      </ButtonGroup>
       
     </Form>
     
