@@ -1,0 +1,73 @@
+.richTextEditor-wrapper {
+    cursor: text;
+    min-height: 100px;
+    height: 230px;
+    padding: 0;
+}
+
+.richTextEditor-wrapper.focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25);
+}
+
+.richTextEditor-wrapper label {
+    height: 36px;
+    color: rgba(114,114,114,1);
+    padding: 6px 12px;
+}
+
+.richTextEditor-wrapper .richTextEditor-toolbar {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    background-color: #FAFAFA;
+    border-top: 1px solid #CED4DA;
+}
+
+.richTextEditor-wrapper .richTextEditor-toolbar .richTextEditor-btn {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #FAFAFA;
+    cursor: pointer;
+}
+
+.richTextEditor-wrapper .richTextEditor-toolbar .richTextEditor-btn:hover {
+    background-color: #CED4DA;
+}
+
+.richTextEditor-wrapper .richTextEditor-toolbar .richTextEditor-btn:active,
+.richTextEditor-wrapper .richTextEditor-toolbar .richTextEditor-btn.active {
+    background-color: #CED4DA;
+}
+
+.richTextEditor-wrapper div.DraftEditor-root {
+    height: calc(100% - 36px - 30px - 7px);
+    min-height: 120px;
+    width: calc(100% - 24px);
+    overflow-y: auto;
+    background-color: #fff;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 6px;
+}
+.richTextEditor-wrapper.no-ph div.DraftEditor-root {
+    height: calc(100% - 30px - 7px);
+}
+
+.richTextEditor-wrapper.no-tb div.DraftEditor-root {
+    height: calc(100% - 36px - 7px);
+}
+
+.richTextEditor-wrapper.no-tb.no-ph div.DraftEditor-root {
+    height: calc(100% - 7px);
+}
+
+div.DraftEditor-editorContainer,
+div.public-DraftEditor-content {
+    height: 100%;
+}

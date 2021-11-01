@@ -1,0 +1,17 @@
+.patient-list-item {
+    color: #303030;
+    text-align: left;
+}
+
+.patient-list-item:hover {
+    background-color: #f0f0f0;
+    color: #303030;
+}
+
+.patient-list-item.active,
+.patient-list-item.nav-pills .show>.nav-link {
+    color: #009FD5;
+    font-weight: bold;
+    background-color: #e8e8e8;
+    border-left: solid 3px #009FD5;
+}

@@ -1,0 +1,31 @@
+.dashed-button {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    height: 50px;
+    border: dashed 2px #d0d0d0;
+    cursor: pointer;
+    color: #a0a0a0;
+    clear: both;
+}
+
+.dashed-button {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.dashed-button:hover {
+    border: dashed 2px #009FD5;
+    color: #009FD5;
+}
+
+.dashed-button:active {
+    border: dashed 2px #FFFFFF;
+    color: #FFFFFF;
+    background-color: #009FD5;
+}
+
+.dashed-button span {
+    display: inline-block;
+    height: 50px;
+}

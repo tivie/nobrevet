@@ -1,0 +1,308 @@
+#print-area {
+    display: none;
+}
+
+
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+    
+    html,
+    body,
+    .page-wrapper,
+    .container-fluid,
+    .right-area,
+    #print-area {
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFFF;
+    }
+
+    html,
+    body {
+        width: 210mm;
+        height: 297mm;
+        font-size: 8pt;
+    }
+    
+    #print-area {
+        margin: 0;
+        padding: 0;
+        display: block !important;
+    }
+
+    h1 {
+        font-size: 16pt !important;
+    }
+    
+    h2, h3, h4, h5, h6 {
+        font-size: 12pt !important;
+        margin-top: 8pt !important;
+    }
+
+    p {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    table {
+        width: 100%;
+    }
+
+    .item {
+        font-weight: bold;
+    }
+
+    .top-row {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .logo {
+        display: flex;
+        flex: 0 0 auto;
+        width: 100px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .logo img {
+        display: inline-block;
+        width: 32px;
+    }
+
+    .logo .brand {
+        display: inline-block;
+        text-align: center;
+        margin-top: 8pt;
+        font-size: 10pt;
+    }
+    
+    .data,
+    .local-de-internamento {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: flex-end;
+        font-size: 10pt;
+        padding-left: 10pt;
+    }
+
+    .local-de-internamento {
+    }
+
+    .data span,
+    .local-de-internamento span {
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .dados-gerais-row {
+        border-top: solid 1px #303030;
+        padding-top: 2px;
+    }
+
+    .dados-gerais-row table {
+        width: 100%;
+    }
+
+    .motivo-internamento-inner {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .motivo-internamento-inner-left {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .motivo-internamento-inner-left>div {
+        flex: 1 1 auto;
+    }
+    
+    .motivo-internamento-inner-right {
+        display: flex;
+        flex-direction: row;
+        flex: 3 0 auto;
+    }
+
+    .motivo-internamento-inner-right>div {
+        flex: 1 0 auto;
+        width: 50%;
+    }
+    
+    /*
+    .motivo-internamento-inner-left,
+    .motivo-internamento-inner-right {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        flex: 0 1 auto;
+    }
+
+    .motivo-internamento-inner-right {
+        flex-direction: row;
+        flex: 1 1 auto;
+    }
+    
+    .motivo-internamento-inner-left>div{
+        flex: 1 1 auto;
+        min-width: 200px;
+    }
+
+    .motivo-internamento-inner-right>div {
+        min-height: 50pt;
+    }
+    */
+    .medicacao-row {
+        margin-top: 8pt;
+    }
+
+    .medicacao-row table {
+        width: 100%;
+    }
+    .medicacao-row table td,
+    .medicacao-row table th,
+    .plano-row-right table td,
+    .plano-row-right table th,
+    .fluidoterapia-row table td,
+    .fluidoterapia-row table th,
+    .alimentacao-row-right table td,
+    .alimentacao-row-right table th {
+        border: 1px solid #aaa;
+    }
+
+    .medicacao-row table .mr-col1 {
+        width: 24%;
+    }
+
+    .medicacao-row table .mr-col2,
+    .medicacao-row table .mr-col3,
+    .medicacao-row table .mr-col4 {
+        width: 7%;
+    }
+
+    .medicacao-row table .mr-col5,
+    .medicacao-row table .mr-col6,
+    .medicacao-row table .mr-col7,
+    .medicacao-row table .mr-col8,
+    .medicacao-row table .mr-col9,
+    .medicacao-row table .mr-col10,
+    .medicacao-row table .mr-col11,
+    .medicacao-row table .mr-col12,
+    .medicacao-row table .mr-col13,
+    .medicacao-row table .mr-col14,
+    .medicacao-row table .mr-col15,
+    .medicacao-row table .mr-col16 {
+        width: 3%;
+        text-align: center;
+    }
+
+    .referenciacao-row-inner {
+        display: flex;
+    }
+
+    .referenciacao-row-inner div {
+        width: 25%;
+    }
+
+    .plano-row-inner {
+        display: flex;
+        width: 100%;
+    }
+
+    .plano-row-left {
+        min-width: 30%;
+        max-width: 55%;
+        border: 1px solid #aaa;
+    }
+
+    .plano-row-right {
+        flex: 1 0 auto;
+    }
+
+    .plano-row-right table {
+        width: 100%;
+    }
+
+    .plano-row-right table th {
+        width: 10%;
+        text-align: center;
+    }
+
+    .plano-row-right table th.pr-col1 {
+        width: 140px;
+        text-align: left;
+    }
+
+    .fluidoterapia-row table th {
+        text-align: center;
+    }
+
+    .fluidoterapia-row table th {
+        width: 7%;
+    }
+
+    .fluidoterapia-row table th.col1 {
+        width: 30%;
+    }
+
+    .fluidoterapia-row table th.col2 {
+        width: 20mm;
+    }
+
+    .fluidoterapia-row table pre {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .fluidoterapia-row table pre>code {
+        display: inline-block;
+        margin-bottom: 0;
+        margin-left: 5pt;
+    }
+
+    .fluidoterapia-row table td {
+        height: 20pt;
+        vertical-align: middle;
+    }
+
+    .alimentacao-row-inner {
+        display: flex;
+        width: 100%;
+    }
+
+    .alimentacao-row-left {
+        min-width: 30%;
+        border: 1px solid #aaa;
+    }
+
+    .alimentacao-row-right {
+        flex: 1 1 auto;
+    }
+
+    .alimentacao-row-right table th {
+        height: 14pt !important;
+        text-align: center;
+    }
+
+    .alimentacao-row-right table td {
+        width: 7%;
+    }
+
+    #diagnostico,
+    #sintomas {
+        font-size: 8pt;
+        border: 1px solid #ccc;
+    }
+
+    .cell-highlight {
+        border: 2px solid #000000 !important;
+    }
+    
+}

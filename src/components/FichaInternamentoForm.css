@@ -1,0 +1,36 @@
+div.required label::after {
+    content: '*';
+    color: red;
+}
+
+#ficha-hospitalizacao fieldset {
+    margin-top: 25px;
+}
+
+.motivo-de-internamento-fieldset #diagnostico,
+.motivo-de-internamento-fieldset #sintomas {
+    height: 185px;
+}
+
+.motivo-de-internamento-fieldset textarea { 
+    resize: none;
+}
+
+.medicacao-fieldset .col-to-colapse {
+    max-width: 60px;
+}
+.medicacao-fieldset .linha-medicacao div.horas-checkboxes div.row div.col,
+.medicacao-fieldset .header-medicacao div.horas-titles div.row div.col{
+    text-align: center;
+}
+
+.medicacao-fieldset .header-medicacao div.horas-titles {
+
+}
+
+.medicacao-fieldset .linha-medicacao {
+    align-items: center !important;
+}
+.medicacao-fieldset .linha-medicacao div {
+    height: 100%;
+}

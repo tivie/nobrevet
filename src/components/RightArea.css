@@ -1,0 +1,6 @@
+.right-area {
+    flex: 2 1 auto;
+    background-color: #fafafa;
+    padding: 20px;
+    overflow-y: auto;
+}
