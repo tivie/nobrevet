@@ -178,18 +178,20 @@ function FichaInternamentoForm(props) {
             </Col>
             <Col className="col-6 horas-checkboxes">
               <Row>
-                <Col className="col-1 align-self-center"><Form.Check checked={h8}  type="checkbox" onChange={(e) => updateMedicacao('h8', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h10} type="checkbox" onChange={(e) => updateMedicacao('h10', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h12} type="checkbox" onChange={(e) => updateMedicacao('h12', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h14} type="checkbox" onChange={(e) => updateMedicacao('h14', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h16} type="checkbox" onChange={(e) => updateMedicacao('h16', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h18} type="checkbox" onChange={(e) => updateMedicacao('h18', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h20} type="checkbox" onChange={(e) => updateMedicacao('h20', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h22} type="checkbox" onChange={(e) => updateMedicacao('h22', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h24} type="checkbox" onChange={(e) => updateMedicacao('h24', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h2}  type="checkbox" onChange={(e) => updateMedicacao('h2', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h4}  type="checkbox" onChange={(e) => updateMedicacao('h4', e.target.value, index)} /></Col>
-                <Col className="col-1 align-self-center"><Form.Check checked={h6}  type="checkbox" onChange={(e) => updateMedicacao('h6', e.target.value, index)} /></Col>
+                <Col className="col-1 align-self-center">
+                  <Form.Check checked={h8} type="checkbox" onChange={(e) => updateMedicacao('h8', e.target.checked, index)} />
+                </Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h10} type="checkbox" onChange={(e) => updateMedicacao('h10', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h12} type="checkbox" onChange={(e) => updateMedicacao('h12', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h14} type="checkbox" onChange={(e) => updateMedicacao('h14', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h16} type="checkbox" onChange={(e) => updateMedicacao('h16', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h18} type="checkbox" onChange={(e) => updateMedicacao('h18', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h20} type="checkbox" onChange={(e) => updateMedicacao('h20', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h22} type="checkbox" onChange={(e) => updateMedicacao('h22', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h24} type="checkbox" onChange={(e) => updateMedicacao('h24', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h2}  type="checkbox" onChange={(e) => updateMedicacao('h2', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h4}  type="checkbox" onChange={(e) => updateMedicacao('h4', e.target.checked, index)} /></Col>
+                <Col className="col-1 align-self-center"><Form.Check checked={h6}  type="checkbox" onChange={(e) => updateMedicacao('h6', e.target.checked, index)} /></Col>
               </Row>
             </Col>
             
