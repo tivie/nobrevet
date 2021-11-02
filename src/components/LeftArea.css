@@ -23,7 +23,3 @@
     text-align: center;
     margin-top: 10px;
 }
-
-.nav-fill .nav-item, .nav-fill>.nav-link {
-    text-align: left;
-}

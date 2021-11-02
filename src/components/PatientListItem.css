@@ -1,5 +1,13 @@
 .patient-list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     color: #303030;
+    text-align: left;
+    min-height: 54px;
+}
+
+.nav-fill .nav-item, .nav-fill>.nav-link {
     text-align: left;
 }
 
@@ -14,4 +22,12 @@
     font-weight: bold;
     background-color: #e8e8e8;
     border-left: solid 3px #009FD5;
+}
+
+.patient-list-item .nav-link-txt {
+    flex: 1 0 auto;
+}
+
+.patient-list-item .nav-link-btn {
+    flex: 0 0 auto;
 }
