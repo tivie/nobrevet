@@ -12,6 +12,7 @@ export default function FormSelect(props) {
     warningBox = <div className="invalid-feedback" data-sb-feedback={id + ':required'}>{title} is required.</div>;
   }
 
+  
   return (
     <Form.Floating className={parentClasses}>
       <Form.Select 
@@ -20,7 +21,10 @@ export default function FormSelect(props) {
         required={required}
         value={value}
         className={classes}
-        onChange={(e) => updateValores(id, e.target.value)}
+        onChange={function (e) {
+          // noinspection JSUnresolvedVariable
+          updateValores(id, e.target.value)
+        }}
         {...rest}
       >
         <option/>

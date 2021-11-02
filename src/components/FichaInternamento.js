@@ -7,6 +7,7 @@ import {EditorState} from "draft-js";
 import {stateFromHTML} from "draft-js-import-html";
 import {stateToHTML} from "draft-js-export-html";
 import PrintPage from "./PrintPage";
+import {Prompt} from "react-router-dom";
 
 
 function FichaInternamento(props) {
@@ -38,7 +39,9 @@ function FichaInternamento(props) {
     medicacao: []
   };
   
+  
   const [valores, setValores] = useState(schema);
+  const [isDirty, setIsDirty] = useState(false);
   
   // richText (performance reasons)
   const [diagnostico, setDiagnostico] = useState(() => EditorState.createEmpty());
@@ -50,12 +53,14 @@ function FichaInternamento(props) {
     let newValores = cloneDeep(valores);
     newValores[key] = val;
     setValores(newValores);
+    onFormChangedHandler();
   };
   
   const updateMedicacao = function (key, val, index) {
     let newValores = cloneDeep(valores);
     newValores.medicacao[index][key] = val;
     setValores(newValores);
+    onFormChangedHandler();
   }
   
   const addMedicacao = function() {
@@ -79,12 +84,14 @@ function FichaInternamento(props) {
       h6: '' 
     });
     setValores(newValores);
+    onFormChangedHandler();
   }
   
   const removeMedicacao = function(index) {
     let newValores = cloneDeep(valores);
     newValores.medicacao.splice(index, 1);
     setValores(newValores);
+    onFormChangedHandler();
   }
   
   const guardarValores = async function () {
@@ -96,6 +103,11 @@ function FichaInternamento(props) {
     await db.Pacientes.put(newVals, parseInt(id));
     console.log('valores guardados na base de dados com sucesso');
     alert('Paciente guardado com sucesso');
+    setIsDirty(false);
+  }
+  
+  const onFormChangedHandler = function() {
+    setIsDirty(true);
   }
   
   /**
@@ -124,14 +136,18 @@ function FichaInternamento(props) {
     if (!data) {
       setValores(null);
     } else {
+      // noinspection JSCheckFunctionSignatures
       let edDiag = (data.diagnostico) ? EditorState.createWithContent(stateFromHTML(data.diagnostico)) : EditorState.createWithContent(stateFromHTML('<p><br></p>'));
+      // noinspection JSCheckFunctionSignatures
       let edSint = (data.sintomas) ? EditorState.createWithContent(stateFromHTML(data.sintomas)) : EditorState.createWithContent(stateFromHTML('<p><br></p>'));
+      // noinspection JSCheckFunctionSignatures
       let edPlano = (data.plano) ? EditorState.createWithContent(stateFromHTML(data.plano)) : EditorState.createWithContent(stateFromHTML('<p><br></p>'));
       setDiagnostico(edDiag);
       setSintomas(edSint);
       setPlano(edPlano);
       data = populateSchema(data);
       setValores(data);
+      setIsDirty(false);
     }
   }, [id]);
   
@@ -146,6 +162,10 @@ function FichaInternamento(props) {
   } else {
     return (
       <div>
+        <Prompt
+          when={isDirty}
+          message={() => `A ficha parece ter sido alterada e não foi guardada. Tem a certeza que quer mudar de ficha?`}
+        />
         <FichaInternamentoForm 
           id={id} 
           valores={valores} 

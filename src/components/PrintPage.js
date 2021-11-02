@@ -66,7 +66,7 @@ function PrintPage({valores, diagnostico, sintomas, plano}) {
             <td><span className="item">Tutor:</span></td>
             <td>{valores.tutor}</td>
             <td><span className="item">Contacto:</span></td>
-            <td>{valores.contacto}</td>
+            <td>{valores.contactoTutor}</td>
             <td><span className="item">NºCliente:</span></td>
             <td>{valores.ncliente}</td>
             <td><span className="item">Peso Entrada:</span></td>
@@ -104,10 +104,10 @@ function PrintPage({valores, diagnostico, sintomas, plano}) {
       <div className="referenciacao-row">
         <h3>Referenciação</h3>
         <div className="referenciacao-row-inner">
-          <div><span className="item">Referência:</span> {valores.referencia}</div>
-          <div><span className="item">Contacto:</span> {valores.contacto_ref}</div>
-          <div><span className="item">Hora e Rúbrica:</span> {valores.horaRubrica}</div>
-          <div><span className="item">Contacto com Tutor:</span> {valores.contactoTutor}</div>
+          <div><span className="item">Referência:</span> {valores.referenciador}</div>
+          <div><span className="item">Telefone Referência:</span> {valores.contactoRef}</div>
+          <div><span className="item">Hora e Rúbrica:</span></div>
+          <div><span className="item">Contacto com Tutor:</span></div>
         </div>
       </div>
 

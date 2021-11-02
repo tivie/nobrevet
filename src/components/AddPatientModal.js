@@ -7,7 +7,7 @@ function AddPatientModal({show, onHide, onSave}) {
   
   
   const criarPaciente = async function () {
-    if (typeof nome === 'undefined' || nome === null || nome.trim() === '') {
+    if (typeof nome === 'undefined' || nome.trim() === '') {
       return;
     }
     await onSave(nome.trim());
