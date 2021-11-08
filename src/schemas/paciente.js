@@ -4,7 +4,7 @@
  */
 export default function getSchema() {
   return {
-    id: '',
+    _id: '',
     nome: '',
     dataAtual: '',
     localDeInternamento: '',

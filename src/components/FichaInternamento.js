@@ -1,44 +1,26 @@
 import {useLiveQuery} from "dexie-react-hooks";
 import db from "../db";
 import FichaInternamentoForm from "./FichaInternamentoForm";
-import {useState} from "react";
+import {useState, useEffect, useContext} from "react";
 import {cloneDeep} from "lodash/lang";
 import {EditorState} from "draft-js";
 import {stateFromHTML} from "draft-js-import-html";
 import {stateToHTML} from "draft-js-export-html";
 import PrintPage from "./PrintPage";
 import {Prompt} from "react-router-dom";
+import getSchema from "../schemas/paciente.js";
+import axios from "axios";
+import {RestContext} from "../context/rest-context";
 
 
 function FichaInternamento(props) {
-
-  const id = props.match.params.id;
-  const schema = {
-    id: id,
-    nome: '',
-    dataAtual: '',
-    localDeInternamento: '',
-    especie: '',
-    raca: '',
-    idade: '',
-    sexo: '',
-    tutor: '',
-    contactoTutor: '',
-    ncliente: '',
-    pesoEntrada: '',
-    pesoDia: '',
-    foiReferenciado: false,
-    referenciador: '',
-    contactoRef: '',
-    horaRubrica: '',
-    dataEntrada: '',
-    medico: '',
-    localCateter: '',
-    dataCateter: '',
-    dataTrocaCateter: '',
-    medicacao: []
-  };
   
+  const id = props.match.params.id;
+  const dbHasChanged = props.dbHasChanged;
+  const setDbHasChanged = props.setDbHasChanged;
+  const schema = getSchema();
+  const baseUrl = useContext(RestContext).baseUrl;
+
   
   const [valores, setValores] = useState(schema);
   const [isDirty, setIsDirty] = useState(false);
@@ -124,6 +106,13 @@ function FichaInternamento(props) {
     }
     return newData;
   }
+
+  useEffect(() => {
+    
+    axios.get();
+    console.log('foo');
+  }, [id]);
+  
   
   useLiveQuery(async function () {
     if (isNaN(id) || !/^\d+$/.test(id)) {

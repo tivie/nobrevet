@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="page-wrapper container-fluid">
         <LeftArea setDbHasChanged={setDbHasChanged} dbHasChanged={dbHasChanged}/>
-        <RightArea/>
+        <RightArea setDbHasChanged={setDbHasChanged} dbHasChanged={dbHasChanged}/>
       </div>
       <Footer copyright="Ana Sofia Salazar"/>
     </Router>
